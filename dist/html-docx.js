@@ -13013,11 +13013,11 @@ internal = _dereq_('./internal');
 
 
 module.exports = {
-  asBlob: function(html, options) {
+  asBlob: function(html, options, global) {
     var zip;
     zip = new JSZip();
     internal.addFiles(zip, html, options);
-    return internal.generateDocument(zip);
+    return internal.generateDocument(zip, global);
   }
 };
 
@@ -13037,7 +13037,7 @@ _ = {
 };
 
 module.exports = {
-  generateDocument: function(zip) {
+  generateDocument: function(zip, global = {}) {
     var buffer;
     buffer = zip.generate({
       type: 'arraybuffer'

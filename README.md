@@ -1,5 +1,6 @@
 html-docx-js
 ============
+_**This is a modified version by Jacob Friesen to correct an import and global fetch error.**_
 
 This is a very small library that is capable of converting HTML documents to DOCX format that
 is used by Microsoft Word 2007 and onward. It manages to perform the conversion in the browser by

@@ -1,11 +1,11 @@
 {
-  "name": "html-docx-js",
+  "name": "@zimit/html-docx-js",
   "version": "0.4.2",
   "description": "Converts HTML documents to DOCX",
   "main": "lib/api.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/evidenceprime/html-docx-js.git"
+    "url": "https://github.com/zimit-io/html-docx-js.git"
   },
   "scripts": {
     "test": "jasmine"

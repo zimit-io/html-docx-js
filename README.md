@@ -3,23 +3,15 @@ html-docx-js
 _**This is a modified version by Jacob Friesen to correct an import and global fetch error.**_
 
 This is a very small library that is capable of converting HTML documents to DOCX format that
-is used by Microsoft Word 2007 and onward. It manages to perform the conversion in the browser by
-using a feature called 'altchunks'. In a nutshell, it allows embedding content in a different markup
+is used by Microsoft Word 2007 and onward. It allows embedding content in a different markup
 language. We are using MHT document to ship the embedded content to Word as it allows to handle images.
 After Word opens such file, it converts the external content to Word Processing ML (this
 is how the markup language of DOCX files is called) and replaces the reference.
 
-Altchunks were not supported by Microsoft Word for Mac 2008 and are not supported by LibreOffice and
-Google Docs.
-
 Compatibility
 -------------
 
-This library should work on any modern browser that supports `Blobs` (either natively or via
-[Blob.js](https://github.com/eligrey/Blob.js/)). It was tested on Google Chrome 36, Safari 7 and
-Internet Explorer 10.
-
-It also works on Node.js (tested on v0.10.12) using `Buffer` instead of `Blob`.
+This library works in Node.js using `Buffer`.
 
 Images Support
 -------------
@@ -30,17 +22,10 @@ regular image (sourced from static folder) on the fly. If you need an example of
 Usage and demo
 --------------
 
-Very minimal demo is available as `test/sample.html` in the repository and
-[online](http://evidenceprime.github.io/html-docx-js/test/sample.html). Please note that saving
-files on Safari is a little bit convoluted and the only reliable method seems to be falling back
-to a Flash-based approach (such as [Downloadify](https://github.com/dcneiner/Downloadify)).
-Our demo does not include this workaround to keep things simple, so it will not work on Safari at
-this point of time.
-
-You can also find a sample for using it in Node.js environment
+You can find a sample for using it in Node.js environment
 [here](https://github.com/evidenceprime/html-docx-js-node-sample).
 
-To generate DOCX, simply pass a HTML document (as string) to `asBlob` method to receive `Blob` (or `Buffer`)
+To generate DOCX, simply pass a HTML document (as string) to `asBuffer` method to receive `Buffer`
 containing the output file.
 
     var converted = htmlDocx.asBlob(content);
@@ -66,10 +51,6 @@ For example:
 
 **IMPORTANT**: please pass a complete, valid HTML (including DOCTYPE, `html` and `body` tags).
 This may be less convenient, but gives you possibility of including CSS rules in `style` tags.
-
-`html-docx-js` is distributed as 'standalone' Browserify module (UMD). You can `require` it as
-`html-docx`. If no module loader is available, it will register itself as `window.htmlDocx`.
-See `test/sample.html` for details.
 
 License
 -------

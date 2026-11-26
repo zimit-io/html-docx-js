@@ -1,6 +1,6 @@
 {
   "name": "@zimit/html-docx-js",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Converts HTML documents to DOCX",
   "main": "lib/api.js",
   "repository": {
